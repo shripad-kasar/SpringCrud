@@ -17,6 +17,15 @@ public class StudentServiceIMPL implements StudentService {
 
 	@Override
 
+	public Student update(Student s, int id) {
+		Optional<Student> findById = sr.findById(id);
+		if(findById.isPresent()) {
+			Student save = sr.save(s);
+			return save;
+		}
+		return null;
+
+
 	public Student getData( int id) {
 		Optional<Student> findById = sr.findById(id);
 		if(findById.isPresent())
