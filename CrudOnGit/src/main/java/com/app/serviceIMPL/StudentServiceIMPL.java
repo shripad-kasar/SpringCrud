@@ -11,4 +11,12 @@ public class StudentServiceIMPL implements StudentService {
 
 	@Autowired
 	StudentRepo sr;
+
+	@Override
+	public String delete(int id) {
+		sr.deleteById(id);
+		return "Data Delete Succefully ";
+	}
+	
+	
 }
