@@ -17,6 +17,14 @@ public class StudentServiceIMPL implements StudentService {
 
 	@Override
 
+	public String delete(int id) {
+		sr.deleteById(id);
+		return "Data Delete Succefully ";
+	}
+	
+	
+
+
 	public Student update(Student s, int id) {
 		Optional<Student> findById = sr.findById(id);
 		if(findById.isPresent()) {
@@ -39,4 +47,5 @@ public class StudentServiceIMPL implements StudentService {
 		return save;
 
 	}
+
 }
