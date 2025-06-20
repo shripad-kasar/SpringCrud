@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.model.Student;
@@ -20,20 +19,20 @@ public class StudentController {
 	StudentService ssi;
 
 	@DeleteMapping("/delete/{id}")
-	public String deleteData(@PathVariable ("id") int id) {
+	public String deleteData(@PathVariable("id") int id) {
 		String delete = ssi.delete(id);
 		return delete;
 	}
-	
+
 	@PutMapping("/update/{id}")
-	public Student updateData(@RequestBody Student s, @RequestParam("id") int id) {
+	public Student updateData(@RequestBody Student s, @PathVariable("id") int id) {
 
 		Student update = ssi.update(s, id);
 		return update;
 	}
 
 	@GetMapping("/getData/{id}")
-	public Student getData(@RequestParam("id") int id) {
+	public Student getData(@PathVariable("id") int id) {
 
 		Student data = ssi.getData(id);
 		return data;
