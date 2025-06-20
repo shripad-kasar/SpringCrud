@@ -6,4 +6,7 @@ public interface StudentService {
 
 	public Student getData( int id);
 
+	public Student save(Student s);
+
+
 }
