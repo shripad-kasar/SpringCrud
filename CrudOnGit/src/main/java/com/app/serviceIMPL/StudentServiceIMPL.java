@@ -16,6 +16,7 @@ public class StudentServiceIMPL implements StudentService {
 	StudentRepo sr;
 
 	@Override
+
 	public Student update(Student s, int id) {
 		Optional<Student> findById = sr.findById(id);
 		if(findById.isPresent()) {
@@ -23,5 +24,19 @@ public class StudentServiceIMPL implements StudentService {
 			return save;
 		}
 		return null;
+
+
+	public Student getData( int id) {
+		Optional<Student> findById = sr.findById(id);
+		if(findById.isPresent())
+		{
+			return findById.get();
+		}
+		return null;
+
+	public Student save(Student s) {
+		Student save = sr.save(s);
+		return save;
+
 	}
 }
