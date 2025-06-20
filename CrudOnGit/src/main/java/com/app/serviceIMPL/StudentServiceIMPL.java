@@ -32,7 +32,7 @@ public class StudentServiceIMPL implements StudentService {
 			return save;
 		}
 		return null;
-
+	}
 
 	public Student getData( int id) {
 		Optional<Student> findById = sr.findById(id);
@@ -41,7 +41,8 @@ public class StudentServiceIMPL implements StudentService {
 			return findById.get();
 		}
 		return null;
-
+	}
+		
 	public Student save(Student s) {
 		Student save = sr.save(s);
 		return save;
